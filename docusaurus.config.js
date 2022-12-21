@@ -57,6 +57,7 @@ const config = {
             label: "Free Youtube Lessons",
           },
           { to: "/services", label: "Services", position: "left" },
+          { to: "/testimonials", label: "Testimonials", position: "left" },
           {
             href: "https://github.com/facebook/docusaurus",
             label: "GitHub",

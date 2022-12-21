@@ -21,18 +21,14 @@
   color: white !important;
 }
 
+.buttons:hover {
+  background-color: #85b2d2;
+}
+
 .testimonials {
   background-color: #39729B;
   color: white;
   font-size: 18px;
-}
-
-.arrowDown {
-  width: 0; 
-  height: 0; 
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #39729B;
 }
 
 .contact {

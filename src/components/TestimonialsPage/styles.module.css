@@ -1,0 +1,41 @@
+.testimonials {
+    background-color: #0c3c60;
+    color: white;
+  }
+  
+.testimonials > h3{
+color: #D1E0EB;
+}
+
+.buttons {
+    background-color: #6EA4CA;
+    border: none;
+    color: white !important;
+}
+
+.buttons:hover {
+    background-color: #85b2d2;
+}
+
+.quote {
+    background-color: #39729B;
+    color: white !important;
+    display: flex;
+    justify-content: center; 
+    font-style: italic;   
+}
+
+.link {
+    justify-content: center;
+    display: flex;
+}
+
+.textLink {
+    color: #39729B;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.textLink:hover{
+    color:#6EA4CA;
+}

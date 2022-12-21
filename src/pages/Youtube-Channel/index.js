@@ -6,7 +6,7 @@ import Link from "@docusaurus/Link";
 import YoutubePage from "@site/src/components/YoutubePage";
 import Header from "@site/src/components/Header";
 
-const YoutubeChannelPage = () => {
+const Page = () => {
   return (
     <Layout>
       <Header
@@ -33,4 +33,4 @@ const YoutubeChannelPage = () => {
   );
 };
 
-export default YoutubeChannelPage;
+export default Page;

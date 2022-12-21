@@ -83,7 +83,7 @@ const Testimonials = () => {
       <div
         style={{ justifyContent: "center", display: "flex", marginBottom: 10 }}
       >
-        <div className={clsx(styles.arrowDown)}></div>
+        <div className="arrowDown"></div>
       </div>
       <Link href="https://www.google.com/maps/contrib/104008897910362075729/photos/@44.9906619,-93.1510711,17z/data=!4m3!8m2!3m1!1e1?hl=en-US">
         - Emiel Smeenk, St. Paul, MN
