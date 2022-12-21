@@ -67,8 +67,13 @@ const BookSection = () => {
 const ServicesPage = () => {
   return (
     <section className={styles.layout}>
-      <div className="container" style={{ width: "50%" }}>
-        <div className={clsx("row margin-bottom--lg", styles.servicesLayout)}>
+      <div className="container">
+        <div
+          className={clsx(
+            "row margin-bottom--lg text--center",
+            styles.servicesLayout
+          )}
+        >
           <h2>Sample Online Lesson</h2>
           <YoutubeEmbed embedId={"t89pKX-VX1k"} />
         </div>

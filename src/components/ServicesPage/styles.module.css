@@ -5,8 +5,9 @@
   }
 
 .servicesLayout{
+    display: block;
     justify-content: center;
-    color:#39729B
+    color:#39729B;
 }
 
 .underline {
