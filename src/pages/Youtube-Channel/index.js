@@ -6,7 +6,7 @@ import Link from "@docusaurus/Link";
 import YoutubePage from "@site/src/components/YoutubePage";
 import Header from "@site/src/components/Header";
 
-export default function MyReactPage() {
+const YoutubeChannelPage = () => {
   return (
     <Layout>
       <Header
@@ -31,4 +31,6 @@ export default function MyReactPage() {
       </main>
     </Layout>
   );
-}
+};
+
+export default YoutubeChannelPage;
