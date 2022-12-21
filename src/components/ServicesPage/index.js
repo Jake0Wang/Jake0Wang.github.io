@@ -8,7 +8,7 @@ import Link from "@docusaurus/Link";
 
 const Card = ({ img, title, time, description }) => {
   return (
-    <div class="card text--center">
+    <div class={clsx("card text--center", styles.card)}>
       <div class="card__image">
         <img
           src={img}
@@ -44,7 +44,10 @@ const Card = ({ img, title, time, description }) => {
 
 const BookSection = () => {
   return (
-    <div style={{ display: "flex", justifyContent: "center", gap: 50 }}>
+    <div
+      className="margin-bottom--lg"
+      style={{ display: "flex", justifyContent: "center", gap: 50 }}
+    >
       <Card
         img={book1}
         title={"TRIAL ONLINE LESSION"}

@@ -14,13 +14,17 @@
     background: #6EA4CA;
     width: 100%;
     margin-bottom: 30px;
-  }
+}
   
-  .buttons{
-    background: #6EA4CA;
-    color: white !important;
-  }
+.buttons{
+background: #6EA4CA;
+color: white !important;
+}
 
-  .buttons:hover{
+.buttons:hover{
     color: black !important;
-  }
+}
+
+.card{
+border: 1px solid rgb(209, 224, 235);
+}
