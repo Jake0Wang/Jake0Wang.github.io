@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktc_chinese_tutor=self.webpackChunktc_chinese_tutor||[]).push([[9250],{3082:(e,t,c)=>{c.r(t),c.d(t,{default:()=>r});var n=c(7294),l=c(3285);function r(){return n.createElement(l.Z,null,n.createElement("h1",null,"Services page"),n.createElement("p",null,"This is a Services page"))}}}]);
