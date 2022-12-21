@@ -113,11 +113,29 @@ const Contact = () => {
       <p>
         <a
           style={{ color: "white", textDecoration: "underline" }}
-          href="mailto: test@gmail.com"
+          href="mailto: LukeWangChineseTutor@gmail.com"
         >
           Email now
         </a>{" "}
         for a discounted one-on-one trial lesson and level assessment.
+      </p>
+      <p>
+        Due to the COVID-19 pandemic, I am currently conducting all teaching
+        online via Google Meet ​ <br />
+        E-mail:{" "}
+        <a
+          style={{ color: "white", textDecoration: "underline" }}
+          href="mailto: LukeWangChineseTutor@gmail.com"
+        >
+          LukeWangChineseTutor@gmail.com
+        </a>{" "}
+        Call:{" "}
+        <a
+          style={{ color: "white", textDecoration: "underline" }}
+          href="Tel:507-403-9816"
+        >
+          (507) 403-9816
+        </a>
       </p>
       <GoogleMapEmbed
         embedUrl={

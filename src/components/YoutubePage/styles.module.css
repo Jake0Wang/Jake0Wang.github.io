@@ -1,0 +1,24 @@
+.layout {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+  color:#0c3c60;
+}
+
+.youtubeLayout {
+  color: #39729B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description {
+  margin-left: 3%;
+}
+
+.dashed {
+  border-top: 3px dashed #bbb;
+  margin-bottom: 15px;
+}
+

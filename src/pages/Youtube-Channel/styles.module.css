@@ -1,0 +1,40 @@
+ .heroBanner {
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    color: #6EA4CA;
+  }
+  
+  @media screen and (max-width: 996px) {
+    .heroBanner {
+      padding: 2rem;
+    }
+  }
+  
+  .heroTitle{
+    font-size: 52px;
+    font-weight: normal;
+    font-family: sans-serif;  
+}
+  
+  .heroSubtitle{
+    color: #39729B;
+    font-size: 16px;
+  }
+
+  .underline {
+    height: 5px;
+    background: #6EA4CA;
+    width: 100px;
+  }
+
+  .buttons{
+    background: #6EA4CA;
+    color: white !important;
+  }
+
+  .buttons:hover{
+    color: black !important;
+  }

@@ -6,7 +6,7 @@ import Homepage from "@site/src/components/Homepage";
 
 import styles from "./index.module.css";
 
-function HomepageHeader() {
+const HomepageHeader = () => {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
@@ -20,19 +20,18 @@ function HomepageHeader() {
       </div>
     </header>
   );
-}
+};
 
-export default function Home() {
+const Home = () => {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
-    >
+    <Layout title={`${siteConfig.title}`}>
       <HomepageHeader />
       <main>
         <Homepage />
       </main>
     </Layout>
   );
-}
+};
+
+export default Home;

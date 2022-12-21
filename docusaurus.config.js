@@ -52,12 +52,11 @@ const config = {
         // },
         items: [
           {
-            type: "doc",
-            docId: "intro",
+            to: "/youtube-channel",
             position: "left",
-            label: "Tutorial",
+            label: "Free Youtube Lessons",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          { to: "/services", label: "Services", position: "left" },
           {
             href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
