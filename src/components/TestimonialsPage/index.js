@@ -32,6 +32,7 @@ const TestimonialList = [
         <br /> - Lana W, Minneapolis, MN
       </>
     ),
+    link: "students",
   },
   {
     title: "PROFESSIONALS",
@@ -61,9 +62,10 @@ const TestimonialList = [
         <br />- David S, (online lesson with Luke), Faribault, MN
       </>
     ),
+    link: "professionals",
   },
   {
-    title: "TEST PREPAPATION",
+    title: "TEST PREPARATION",
     description: (
       <>
         " When I started working with Luke, I had one specific goal: to pass the
@@ -89,10 +91,11 @@ const TestimonialList = [
         <br />- Leah M. Teacher from Minneapolis, MN
       </>
     ),
+    link: "test-preparation",
   },
 ];
 
-const Testimonial = ({ title, description }) => {
+const Testimonial = ({ title, description, link }) => {
   return (
     <div className={clsx("col col--4")}>
       <div
@@ -108,7 +111,7 @@ const Testimonial = ({ title, description }) => {
             "button button--secondary button--lg",
             styles.buttons
           )}
-          to="/docs/intro"
+          to={`/testimonials/${link}`}
         >
           More
         </Link>
