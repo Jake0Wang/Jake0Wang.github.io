@@ -6,13 +6,13 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "twincitieschinesetutor",
+  title: "Twin Cities Chinese Tutor",
   tagline: "",
   url: "https://jake0wang.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  // favicon: "img/bg.webp",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
