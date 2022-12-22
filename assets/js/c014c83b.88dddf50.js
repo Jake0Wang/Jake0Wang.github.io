@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktc_chinese_tutor=self.webpackChunktc_chinese_tutor||[]).push([[4428],{2876:(e,t,l)=>{l.r(t),l.d(t,{default:()=>c});var n=l(7294),u=l(3285);function c(){return n.createElement(u.Z,null,n.createElement("h1",null,"Philosophy page"),n.createElement("p",null,"This is a Philosophy page"))}}}]);
