@@ -101,7 +101,7 @@ const Interview = () => {
         "Motivation", Minnesota Metro Cable Network - Channel 6. Luke shares his
         background and teaching philosophy in this video.
       </p>
-      <YoutubeEmbed embedId="vMhcQFQVw4s" />
+      <YoutubeEmbed embedId="vMhcQFQVw4s" width={853} height={480} />
     </div>
   );
 };

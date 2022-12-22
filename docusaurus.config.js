@@ -58,11 +58,7 @@ const config = {
           },
           { to: "/services", label: "Services", position: "left" },
           { to: "/testimonials", label: "Testimonials", position: "left" },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
-          },
+          { to: "/about", label: "About", position: "right" },
         ],
       },
       footer: {

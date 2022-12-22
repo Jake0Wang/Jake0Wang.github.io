@@ -75,7 +75,7 @@ const ServicesPage = () => {
           )}
         >
           <h2>Sample Online Lesson</h2>
-          <YoutubeEmbed embedId={"t89pKX-VX1k"} />
+          <YoutubeEmbed embedId={"t89pKX-VX1k"} width={853} height={480} />
         </div>
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>

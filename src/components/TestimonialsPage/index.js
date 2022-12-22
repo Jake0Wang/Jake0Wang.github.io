@@ -120,7 +120,7 @@ const Testimonial = ({ title, description, link }) => {
   );
 };
 
-const Testimonialspage = () => {
+const TestimonialsPage = () => {
   return (
     <section className={styles.layout}>
       <div className="container margin-bottom--xl">
@@ -152,4 +152,4 @@ const Testimonialspage = () => {
   );
 };
 
-export default Testimonialspage;
+export default TestimonialsPage;

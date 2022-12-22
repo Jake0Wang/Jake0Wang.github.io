@@ -26,7 +26,7 @@ const Quote = ({ sentence, name, location }) => {
   );
 };
 
-const StudentsPage = ({ QuoteList }) => {
+const QuotePage = ({ QuoteList }) => {
   return (
     <section className={styles.layout}>
       <div className="container margin-bottom--xl">
@@ -40,4 +40,4 @@ const StudentsPage = ({ QuoteList }) => {
   );
 };
 
-export default StudentsPage;
+export default QuotePage;

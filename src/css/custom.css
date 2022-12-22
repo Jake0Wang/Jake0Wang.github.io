@@ -46,3 +46,14 @@ html {
   background-image: url(../../static/img/bg.webp); 
   background-size: cover;
 }
+
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.vert-center {
+  display: flex;
+  align-items: center;
+}

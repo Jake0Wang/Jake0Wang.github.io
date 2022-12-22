@@ -1,0 +1,11 @@
+.profile {
+    background-color: #0C3C60; 
+    width: 430px; 
+    padding: 5px;
+}
+
+.name {
+    font-family: sans-serif;
+    color: white;
+    font-size: 20px;
+}

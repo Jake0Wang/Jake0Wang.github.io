@@ -55,7 +55,7 @@ const Youtube = ({ videoCode, title, description, answer }) => {
         styles.youtubeLayout
       )}
     >
-      <YoutubeEmbed embedId={videoCode} size="small" />
+      <YoutubeEmbed embedId={videoCode} width={480} height={280} />
       <div className={clsx(styles.description)}>
         <h3>{title}</h3>
         <p>{description}</p>
