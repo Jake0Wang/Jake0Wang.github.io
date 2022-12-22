@@ -58,6 +58,7 @@ const config = {
           },
           { to: "/services", label: "Services", position: "left" },
           { to: "/testimonials", label: "Testimonials", position: "left" },
+          { to: "/philosophy", label: "Philosophy", position: "left" },
           { to: "/about", label: "About", position: "right" },
         ],
       },
