@@ -16,6 +16,7 @@ const FeatureList = [
         again!
       </>
     ),
+    link: "/testimonials/students",
   },
   {
     title: "PROFESSIONALS",
@@ -26,9 +27,10 @@ const FeatureList = [
         specific learning needs, this program will help you speak from Day 1!
       </>
     ),
+    link: "/testimonials/professionals",
   },
   {
-    title: "TEST PREPAPATION",
+    title: "TEST PREPARATION",
     description: (
       <>
         AP Chinese, HSK, MTLE, Foreign ServiceProficiency Test, ... Chinese
@@ -37,10 +39,11 @@ const FeatureList = [
         ready!
       </>
     ),
+    link: "/testimonials/test-preparation",
   },
 ];
 
-const Feature = ({ title, description }) => {
+const Feature = ({ title, description, link }) => {
   return (
     <div className={clsx("col col--4")}>
       <div
@@ -56,7 +59,7 @@ const Feature = ({ title, description }) => {
             "button button--secondary button--lg",
             styles.buttons
           )}
-          to="/docs/intro"
+          to={link}
         >
           More Info
         </Link>
@@ -108,7 +111,7 @@ const Interview = () => {
 
 const Contact = () => {
   return (
-    <div className={clsx("text--center padding-horiz--md")}>
+    <div className={clsx("text--center padding-horiz--md")} id="contact">
       <h3 style={{ fontSize: 60 }}>​Contact</h3>
       <p>
         <a

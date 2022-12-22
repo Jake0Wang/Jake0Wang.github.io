@@ -144,7 +144,7 @@ const TestimonialsPage = () => {
         >
           <div className="arrowDown"></div>
         </div>
-        <Link to="" className={styles.link}>
+        <Link to="/#contact" className={styles.link}>
           <h1 className={styles.textLink}>Let's Meet!</h1>
         </Link>
       </div>
