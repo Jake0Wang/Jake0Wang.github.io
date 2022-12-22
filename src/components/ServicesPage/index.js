@@ -8,8 +8,8 @@ import Link from "@docusaurus/Link";
 
 const Card = ({ img, title, time, description }) => {
   return (
-    <div class={clsx("card text--center", styles.card)}>
-      <div class="card__image">
+    <div className={clsx("card text--center", styles.card)}>
+      <div className="card__image">
         <img
           src={img}
           alt="Image alt text"
@@ -17,7 +17,7 @@ const Card = ({ img, title, time, description }) => {
           style={{ width: "450px" }}
         />
       </div>
-      <div class="card__body">
+      <div className="card__body">
         <h2>{title}</h2>
         <p>
           <Link to="" style={{ textDecoration: "underline" }}>
@@ -27,7 +27,7 @@ const Card = ({ img, title, time, description }) => {
         <p>{time}</p>
         <p>{description}</p>
       </div>
-      <div class="card__footer">
+      <div className="card__footer">
         <Link
           className={clsx(
             "button button--secondary button--lg",
@@ -44,10 +44,7 @@ const Card = ({ img, title, time, description }) => {
 
 const BookSection = () => {
   return (
-    <div
-      className="margin-bottom--lg"
-      style={{ display: "flex", justifyContent: "center", gap: 50 }}
-    >
+    <div className={clsx("margin-bottom--lg center", styles.cardLayout)}>
       <Card
         img={book1}
         title={"TRIAL ONLINE LESSION"}

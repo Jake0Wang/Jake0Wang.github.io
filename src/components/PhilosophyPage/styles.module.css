@@ -8,3 +8,11 @@
     color: #0C3C60;
     font-size: 14;
 }
+
+
+@media screen and (max-width: 900px) {
+    .layout {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+  }

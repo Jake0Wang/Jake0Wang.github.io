@@ -7,11 +7,11 @@ import YoutubeEmbed from "../Youtube";
 
 const BusinessCard = () => {
   return (
-    <div className="center">
-      <div className={clsx("col col--4 padding--none")}>
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div>
         <img src={profile} alt="profile pic" />
       </div>
-      <div className={clsx("col col--8 vert-center padding--none")}>
+      <div className="vert-center">
         <div className="container">
           <div className="row center">
             <h2 className={clsx(styles.name)}>Luke Wang</h2>
@@ -127,7 +127,7 @@ const AboutPage = () => {
   return (
     <section>
       <div className="container margin-bottom--xl center">
-        <div className={clsx("row margin-bottom--lg", styles.profile)}>
+        <div className={clsx("row", styles.profile)}>
           <BusinessCard />
         </div>
       </div>

@@ -112,7 +112,9 @@ const StoryList = [
 
 const Story = ({ pic, paragraph, title }) => {
   return (
-    <div className={clsx("row margin-bottom--xl margin-horiz--xl")}>
+    <div
+      className={clsx("row margin-bottom--xl margin-horiz--xl", styles.layout)}
+    >
       <div className={clsx("col col--4 vert-center")}>
         <img src={pic} alt="pic with basketball superstar" />
       </div>

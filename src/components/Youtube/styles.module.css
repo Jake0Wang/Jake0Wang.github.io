@@ -1,15 +1,22 @@
-.video-responsive {
+.videoResponsive {
     overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
     height: 0;
-  }
+}
   
-  .video-responsive iframe {
+/* .videoResponsive iframe {
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     position: absolute;
-  }
+} */
   
+
+@media screen and (max-width: 900px) {
+    .youtubeSize > iframe {
+      width: 20rem;
+      height: 10rem;
+    }
+  }

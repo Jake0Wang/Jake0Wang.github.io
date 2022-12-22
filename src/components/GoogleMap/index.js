@@ -3,7 +3,7 @@ import React from "react";
 
 function GoogleMapEmbed({ embedUrl }) {
   return (
-    <div className={styles}>
+    <div className={styles.mapSize}>
       <iframe
         src={embedUrl}
         width="600"

@@ -1,7 +1,7 @@
 .profile {
     background-color: #0C3C60; 
-    width: 430px; 
-    padding: 5px;
+    width: 600px; 
+    padding: 10px;
 }
 
 .name {
@@ -9,3 +9,9 @@
     color: white;
     font-size: 20px;
 }
+
+@media screen and (max-width: 900px) {
+    .profile {
+        width: 380px !important; 
+    }
+  }

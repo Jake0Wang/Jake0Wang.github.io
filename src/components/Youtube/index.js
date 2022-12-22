@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 
 const YoutubeEmbed = ({ embedId, width, height }) => (
-  <div className="video-responsive">
+  <div className={clsx(styles.youtubeSize)}>
     <iframe
       width={width}
       height={height}

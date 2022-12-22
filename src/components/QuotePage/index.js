@@ -28,9 +28,14 @@ const Quote = ({ sentence, name, location }) => {
 
 const QuotePage = ({ QuoteList }) => {
   return (
-    <section className={styles.layout}>
+    <section>
       <div className="container margin-bottom--xl">
-        <div className="row margin-bottom--lg margin-horiz--xl">
+        <div
+          className={clsx(
+            "row margin-bottom--lg margin-horiz--xl",
+            styles.layout
+          )}
+        >
           {QuoteList.map((props, idx) => (
             <Quote key={idx} {...props} />
           ))}
