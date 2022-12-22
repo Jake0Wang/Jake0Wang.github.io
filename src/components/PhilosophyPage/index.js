@@ -11,7 +11,7 @@ const StoryList = [
     pic: pic1,
     title: "STRONG FOUNDATION",
     paragraph: (
-      <p>
+      <>
         The first year is a critical one because it builds the base of the
         language knowledge, and students will have to rely on this foundation
         throughout their Chinese speaking careers.
@@ -25,14 +25,14 @@ const StoryList = [
         <br />I tailor my teaching toward the specific needs of the students and
         focus on practicality in their future communication and interaction with
         Chinese natives.
-      </p>
+      </>
     ),
   },
   {
     pic: pic2,
     title: "GROWTH",
     paragraph: (
-      <p>
+      <>
         In intermediate to advanced levels, I incorporate knowledge of Chinese
         culture, custom, and social and professional etiquette in my teaching.
         <br />
@@ -49,14 +49,14 @@ const StoryList = [
         exposures to establish and enhance the "muscle memory". The "muscle
         memory" connects the new language directly to our THOUGHTS and IDEAS,
         skipping our mother language entirely.
-      </p>
+      </>
     ),
   },
   {
     pic: pic3,
     title: "CUSTOMIZATION",
     paragraph: (
-      <p>
+      <>
         The organization of my teaching is highly customized to the learning
         style, time and expectations of my students.
         <br />
@@ -80,14 +80,14 @@ const StoryList = [
         Chinese and English. We will also spend time working on character
         writing and reading. I will recommend suitable textbooks, but I can also
         work with any textbook if you already have one that you like.
-      </p>
+      </>
     ),
   },
   {
     pic: pic4,
     title: "TECHNOLOGY & TOOLS",
     paragraph: (
-      <p>
+      <>
         Suitable technology and tools help to improve our access to learning
         resources. They also improve the efficiency of our language retention.
         In order to maximize the effectiveness of my lessons, I utilize various
@@ -105,7 +105,7 @@ const StoryList = [
         accomplished through a particular system called "Spaced Repetition",
         which emphasizes a consistent and strategic review schedule in order to
         achieve learning targets.
-      </p>
+      </>
     ),
   },
 ];
@@ -116,9 +116,9 @@ const Story = ({ pic, paragraph, title }) => {
       <div className={clsx("col col--4 vert-center")}>
         <img src={pic} alt="pic with basketball superstar" />
       </div>
-      <div className={clsx("col col--8")} style={{ color: "#0C3C60" }}>
-        <h1>{title}</h1>
-        {paragraph}
+      <div className={clsx("col col--8")}>
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.paragraph}>{paragraph}</p>
       </div>
     </div>
   );
