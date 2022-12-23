@@ -60,6 +60,7 @@ const config = {
           { to: "/testimonials", label: "Testimonials", position: "left" },
           { to: "/philosophy", label: "Philosophy", position: "left" },
           { to: "/about", label: "About", position: "right" },
+          { to: "/#contact", label: "Contact", position: "right" },
         ],
       },
       footer: {
