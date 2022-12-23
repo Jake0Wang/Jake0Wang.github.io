@@ -1,6 +1,6 @@
 @media screen and (max-width: 900px) {
     .youtubeSize > iframe {
       width: 20rem;
-      height: 10rem;
+      height: 15rem;
     }
   }

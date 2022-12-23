@@ -51,7 +51,7 @@ const Youtube = ({ videoCode, title, description, answer }) => {
   return (
     <div
       className={clsx(
-        "text--center padding-horiz--md margin--md padding--lg",
+        "text--center padding-horiz--md padding--lg",
         styles.youtubeLayout
       )}
     >
@@ -72,7 +72,7 @@ const Youtube = ({ videoCode, title, description, answer }) => {
 const YoutubePage = () => {
   return (
     <section className={styles.layout}>
-      <div className="container" style={{ width: "50%" }}>
+      <div className="container">
         <div className="row margin-bottom--lg">
           {YoutubeList.map((props, idx) => (
             <Youtube key={idx} {...props} />
