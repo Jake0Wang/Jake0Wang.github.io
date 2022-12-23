@@ -23,3 +23,22 @@
         margin-right: 1rem !important;
     }
   }
+
+.backButton {
+    background: none;
+    border: none;
+    display: flex;
+}
+
+.backButton > span {
+    color: #39729B;
+    font-size: 18px;
+}
+
+.backButton :hover {
+    color: #4283b2
+}
+
+.backButton :active {
+    color: #306184;
+}
