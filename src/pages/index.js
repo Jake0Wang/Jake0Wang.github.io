@@ -69,8 +69,8 @@ function Slideshow() {
       >
         {pics.map((pic, index) => (
           <div key={index} style={{ display: "inline-block" }}>
-            <img className={styles.slide} src={pic} />
-            <img className={styles.slide} src={pic} />
+            <img className={styles.slide} src={pic} alt={pic} />
+            <img className={styles.slide} src={pic} alt={pic} />
           </div>
         ))}
       </div>

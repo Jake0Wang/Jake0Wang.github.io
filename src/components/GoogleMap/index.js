@@ -11,6 +11,7 @@ function GoogleMapEmbed({ embedUrl }) {
         style={{ border: "0" }}
         allowFullScreen=""
         loading="lazy"
+        title="Embedded google map"
       ></iframe>
     </div>
   );

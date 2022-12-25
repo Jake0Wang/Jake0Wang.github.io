@@ -52,7 +52,7 @@ const Feature = ({ title, description, link }) => {
           styles.features
         )}
       >
-        <h3 style={{ fontSize: 24 }}>{title}</h3>
+        <h2>{title}</h2>
         <p>{description}</p>
         <Link
           className={clsx(
@@ -71,7 +71,7 @@ const Feature = ({ title, description, link }) => {
 const Testimonials = () => {
   return (
     <div className={clsx("text--center padding-horiz--md")}>
-      <h3 style={{ fontSize: 24 }}>​​TESTIMONIALS</h3>
+      <h2>​​TESTIMONIALS</h2>
       <p
         className={clsx("padding--lg margin-bottom--none", styles.testimonials)}
       >
