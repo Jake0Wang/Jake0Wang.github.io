@@ -61,7 +61,7 @@ const Feature = ({ title, description, link }) => {
           )}
           to={link}
         >
-          More Testimonials
+          More Info
         </Link>
       </div>
     </div>
