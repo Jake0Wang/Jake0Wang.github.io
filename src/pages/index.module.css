@@ -109,15 +109,17 @@
 
 @media screen and (max-width: 450px) {
   .heroBanner {
-    padding: 2rem;
-    top: 10rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    top: 8rem;
   }
 
   .heroTitle{
-    font-size: 24px;
+    font-size: 28px;
   }
   
   .heroSubtitle{
-    font-size: 18px;
+    line-height: 2;
+    font-size: 22px;
   }
 }
