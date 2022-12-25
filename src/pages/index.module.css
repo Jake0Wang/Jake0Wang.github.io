@@ -107,7 +107,7 @@
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .heroBanner {
     padding: 2rem;
     top: 10rem;
