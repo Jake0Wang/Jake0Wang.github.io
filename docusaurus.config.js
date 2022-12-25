@@ -44,6 +44,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        {
+          name: "Twin Cities Chinese Tutor",
+          content: "The BEST Chinese Tutor in Twin Cities, MN",
+        },
+      ],
       navbar: {
         title: "Home",
         // logo: {
