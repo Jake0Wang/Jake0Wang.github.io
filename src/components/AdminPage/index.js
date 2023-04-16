@@ -2,8 +2,13 @@ import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
+function extractVideoCode(url) {
+  const matches = url.match(/youtu\.be\/(.+)/);
+  return matches ? matches[1] : null;
+}
+
 const AdminPage = () => {
-  const [youtubeCode, setYoutubeCode] = useState("");
+  const [youtubeUrl, setyoutubeUrl] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [answer, setAnswer] = useState("");
@@ -14,16 +19,16 @@ const AdminPage = () => {
   useEffect(() => {
     setIsValid(false);
 
-    if (youtubeCode && title && description) {
+    if (youtubeUrl && title && description) {
       setIsValid(true);
       setIsSent(false);
     }
-  }, [youtubeCode, title, description, answer]);
+  }, [youtubeUrl, title, description, answer]);
 
   const handleClick = async () => {
     try {
       const data = {
-        video_code: youtubeCode,
+        video_code: extractVideoCode(youtubeUrl),
         title,
         description,
         answer,
@@ -44,7 +49,7 @@ const AdminPage = () => {
 
       if (response.ok) {
         setIsSent(true);
-        setYoutubeCode("");
+        setyoutubeUrl("");
         setTitle("");
         setDescription("");
         setAnswer("");
@@ -66,21 +71,21 @@ const AdminPage = () => {
         <div className={clsx("row", styles.form)}>
           <input
             type="text"
-            placeholder="Youtube Code"
-            value={youtubeCode}
-            onChange={(e) => setYoutubeCode(e.target.value)}
+            placeholder="Youtube Share Url (Required)"
+            value={youtubeUrl}
+            onChange={(e) => setyoutubeUrl(e.target.value)}
             className={clsx(styles.input)}
           />
           <textarea
             type="text"
-            placeholder="Title"
+            placeholder="Title (Required)"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className={clsx(styles.input)}
           />
           <textarea
             type="text"
-            placeholder="Description"
+            placeholder="Description (Required)"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className={clsx(styles.input)}
@@ -88,7 +93,7 @@ const AdminPage = () => {
           />
           <textarea
             type="text"
-            placeholder="Answer"
+            placeholder="Answer (Optional)"
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             className={clsx(styles.input)}
