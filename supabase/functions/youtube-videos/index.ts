@@ -5,8 +5,6 @@
 import { serve } from "http";
 import { createClient } from "supabase";
 
-console.log("Hello from Functions!");
-
 serve(async () => {
   const supabaseClient = createClient(
     Deno.env.get("SUPABASE_URL") ?? "",
