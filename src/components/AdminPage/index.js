@@ -21,7 +21,7 @@ const AdminPage = () => {
   const handleClick = async () => {
     try {
       const response = await axios.post(
-        "https://2413-24-188-229-60.ngrok-free.app/functions/v1/youtube-videos",
+        "https://vasqhjczkzaqsexezhhn.functions.supabase.co/youtube-videos",
         {
           youtubeCode,
           title,
