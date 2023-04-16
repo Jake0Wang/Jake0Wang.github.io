@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
-import axios from "axios";
 
 const AdminPage = () => {
   const [youtubeCode, setYoutubeCode] = useState("");
@@ -9,32 +8,56 @@ const AdminPage = () => {
   const [description, setDescription] = useState("");
   const [answer, setAnswer] = useState("");
   const [isValid, setIsValid] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // new state variable
 
   useEffect(() => {
     setIsValid(false);
 
     if (youtubeCode && title && description) {
       setIsValid(true);
+      setIsSent(false);
     }
   }, [youtubeCode, title, description, answer]);
 
   const handleClick = async () => {
     try {
-      const response = await axios.post(
+      const data = {
+        video_code: youtubeCode,
+        title,
+        description,
+        answer,
+      };
+
+      setIsLoading(true); // set loading state to true
+
+      const response = await fetch(
         "https://vasqhjczkzaqsexezhhn.functions.supabase.co/youtube-videos",
         {
-          youtubeCode,
-          title,
-          description,
-          answer,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
         }
       );
+
+      if (response.ok) {
+        setIsSent(true);
+        setYoutubeCode("");
+        setTitle("");
+        setDescription("");
+        setAnswer("");
+      }
     } catch (error) {
       console.error(error);
-      console.error(error.response.data);
-      console.error(error.response.status);
-      console.error(error.response.headers);
+      setIsSent(false);
+      alert(
+        "An error occurred while submitting the form. Please try again later."
+      );
     }
+
+    setIsLoading(false); // set loading state to false once response is received
   };
 
   return (
@@ -77,7 +100,7 @@ const AdminPage = () => {
             onClick={handleClick}
             className={clsx(styles.button)}
           >
-            Submit
+            {isLoading ? "Sending..." : isSent ? "Submitted" : "Submit"}
           </button>
         </div>
       </div>
