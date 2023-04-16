@@ -1,53 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import YoutubeEmbed from "../Youtube";
 
-const YoutubeList = [
-  {
-    videoCode: "sJztVid8SFc",
-    title: <>Top 5 ways to use Verb + 起来 (qi lai)</>,
-    description: (
-      <>
-        In this video, we discuss the top 5 ways 起来 (qi lai) is used as a verb
-        complement. The meaning varies quite a lot.
-      </>
-    ),
-    answer: (
-      <>
-        Answers for the final challenge: 请把这件礼物包起来。
-        这个月我的工作忙起来了。 你家看起来真干净。
-      </>
-    ),
-  },
-  {
-    videoCode: "EKcSdYks2gE",
-    title: <>Chinese Sentence Structure</>,
-    description: (
-      <>
-        Chinese sentence structure is very different from English. A lot of
-        students are confused by how to properly put words together. In this
-        video, we are going to talk about how to build a statement and a
-        question properly in Chinese. I will go more in depth into other types
-        of questions such as "yes or no", "A or B", or "how and why" in the
-        future videos.
-      </>
-    ),
-  },
-  {
-    videoCode: "xTTOHJv-RzU",
-    title: <>比较 comparison in Chinese</>,
-    description: (
-      <>
-        In this video, we are going to talk about how to properly use the
-        patterns for making a comparison in Chinese: A 比 B + adj. A 跟 B 一样 +
-        adj.
-      </>
-    ),
-  },
-];
-
-const Youtube = ({ videoCode, title, description, answer }) => {
+const Youtube = ({ video_code, title, description, answer }) => {
   return (
     <div
       className={clsx(
@@ -55,13 +11,15 @@ const Youtube = ({ videoCode, title, description, answer }) => {
         styles.youtubeLayout
       )}
     >
-      <YoutubeEmbed embedId={videoCode} width={480} height={280} />
+      <YoutubeEmbed embedId={video_code} width={480} height={280} />
       <div className={clsx(styles.description)}>
         <h3>{title}</h3>
         <p>{description}</p>
         {answer && (
           <>
-            <div className={styles.dashed}></div> <p>{answer}</p>
+            <div className={styles.dashed}></div>
+            <h3>Answers for the video questions:</h3>
+            <p>{answer}</p>
           </>
         )}
       </div>
@@ -70,11 +28,25 @@ const Youtube = ({ videoCode, title, description, answer }) => {
 };
 
 const YoutubePage = () => {
+  const [youtubeList, setYoutubeList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://vasqhjczkzaqsexezhhn.functions.supabase.co/youtube-videos"
+      );
+      const data = await response.json();
+      setYoutubeList(data);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section className={styles.layout}>
       <div className="container">
         <div className="row margin-bottom--lg">
-          {YoutubeList.map((props, idx) => (
+          {youtubeList.map((props, idx) => (
             <Youtube key={idx} {...props} />
           ))}
         </div>
