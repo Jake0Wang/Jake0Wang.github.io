@@ -28,7 +28,7 @@ serve(async (req: Request) => {
         const { data } = await supabaseClient
           .from("youtube_videos")
           .select()
-          .order("created_at", { ascending: true })
+          .order("created_at", { ascending: false })
           .throwOnError();
 
         resData = data;
