@@ -7,32 +7,42 @@ import { createClient } from "supabase";
 
 serve(async (req: Request) => {
   try {
-    if (req.method === "OPTIONS") {
-      return new Response(null, {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "POST",
-          "Access-Control-Allow-Headers": "Content-Type",
-          "Referrer-Policy": "strict-origin-when-cross-origin",
-        },
-      });
-    }
-    const data = await req.json();
-
     const supabaseClient = createClient(
       Deno.env.get("SUPABASE_URL") ?? "",
       Deno.env.get("SUPABASE_ANON_KEY") ?? "",
       {}
     );
 
-    await supabaseClient.from("youtube_videos").insert(data).throwOnError();
+    // deno-lint-ignore no-explicit-any
+    let resData: any[] | null = [];
+    switch (req.method) {
+      case "OPTIONS":
+        break;
+      case "POST": {
+        const data = await req.json();
 
-    return new Response("success", {
+        await supabaseClient.from("youtube_videos").insert(data).throwOnError();
+        break;
+      }
+      case "GET": {
+        const { data } = await supabaseClient
+          .from("youtube_videos")
+          .select()
+          .order("created_at", { ascending: true })
+          .throwOnError();
+
+        resData = data;
+        break;
+      }
+      default:
+        break;
+    }
+
+    return new Response(JSON.stringify(resData), {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST",
+        "Access-Control-Allow-Methods": "GET, POST",
         "Access-Control-Allow-Headers": "Content-Type",
         "Referrer-Policy": "strict-origin-when-cross-origin",
       },
