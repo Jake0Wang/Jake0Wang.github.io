@@ -1,27 +1,21 @@
 .layout {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  justify-content: center;
   width: 100%;
-  color:#0c3c60;
 }
 
-.youtubeLayout {
-  width: 100%;
-  color: #39729B;
+.column {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: top;
+  float: left;
+  width: 33.33%;
+  padding: 20px;
 }
 
-@media screen and (max-width: 900px) {
-  .youtubeLayout  {
-    display: block;
-  }
-}
-
-.description {
-  margin-left: 3%;
+.row {
+  margin: 0px
 }
 
 .dashed {
@@ -64,4 +58,20 @@
 .paginationLayout {
   justify-content: center;
   width: 100%;
+}
+
+.youtubeBlock > * {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1500px) {
+  .column {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .column {
+    width: 100%;
+  }
 }

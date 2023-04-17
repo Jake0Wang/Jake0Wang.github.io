@@ -6,23 +6,20 @@ import ReactPaginate from "react-paginate";
 
 const Youtube = ({ video_code, title, description, answer }) => {
   return (
-    <div
-      className={clsx(
-        "text--center padding-horiz--md padding--lg",
-        styles.youtubeLayout
-      )}
-    >
-      <YoutubeEmbed embedId={video_code} width={480} height={280} />
-      <div className={clsx(styles.description)}>
-        <h3>{title}</h3>
-        <p>{description}</p>
-        {answer && (
-          <>
-            <div className={styles.dashed}></div>
-            <h3>Answers for the video questions:</h3>
-            <p>{answer}</p>
-          </>
-        )}
+    <div className={clsx("text--center", styles.column)}>
+      <div className={clsx(styles.youtubeBlock)}>
+        <YoutubeEmbed embedId={video_code} width={480} height={360} />
+        <div className={clsx(styles.description)}>
+          <h3>{title}</h3>
+          <p>{description}</p>
+          {answer && (
+            <>
+              <div className={styles.dashed}></div>
+              <h3>Answers for the video questions:</h3>
+              <p>{answer}</p>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -30,10 +27,10 @@ const Youtube = ({ video_code, title, description, answer }) => {
 
 function Items({ currentItems }) {
   return (
-    <>
+    <div className={clsx("row", styles.row)}>
       {currentItems &&
         currentItems.map((props, idx) => <Youtube key={idx} {...props} />)}
-    </>
+    </div>
   );
 }
 
@@ -104,9 +101,9 @@ function PaginatedItems({ itemsPerPage }) {
 const YoutubePage = () => {
   return (
     <section className={styles.layout}>
-      <div className="container">
-        <div className="row margin-bottom--lg">
-          <PaginatedItems itemsPerPage={5} />
+      <div>
+        <div className="margin-bottom--lg">
+          <PaginatedItems itemsPerPage={12} />
         </div>
       </div>
     </section>
