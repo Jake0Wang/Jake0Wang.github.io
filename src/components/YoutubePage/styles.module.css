@@ -29,3 +29,39 @@
   margin-bottom: 15px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding-left: 0;
+}
+
+.paginationItem:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.paginationItem:hover {
+  color: #39729B;
+}
+
+.paginationItem {
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #6EA4CA;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.active {
+  font-weight: 800;
+}
+
+.paginationLayout {
+  justify-content: center;
+  width: 100%;
+}

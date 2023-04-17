@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import YoutubeEmbed from "../Youtube";
+import ReactPaginate from "react-paginate";
 
 const Youtube = ({ video_code, title, description, answer }) => {
   return (
@@ -27,7 +28,20 @@ const Youtube = ({ video_code, title, description, answer }) => {
   );
 };
 
-const YoutubePage = () => {
+function Items({ currentItems }) {
+  return (
+    <>
+      {currentItems &&
+        currentItems.map((props, idx) => <Youtube key={idx} {...props} />)}
+    </>
+  );
+}
+
+function PaginatedItems({ itemsPerPage }) {
+  // Here we use item offsets; we could also use page offsets
+  // following the API or data you're working with.
+  const [itemOffset, setItemOffset] = useState(0);
+
   const [youtubeList, setYoutubeList] = useState([]);
 
   useEffect(() => {
@@ -42,13 +56,57 @@ const YoutubePage = () => {
     fetchData();
   }, []);
 
+  // Simulate fetching items from another resources.
+  // (This could be items from props; or items loaded in a local state
+  // from an API endpoint with useEffect and useState)
+  const endOffset = itemOffset + itemsPerPage;
+
+  const currentItems = youtubeList.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(youtubeList.length / itemsPerPage);
+
+  // Invoke when user click to request another page.
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % youtubeList.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  };
+
+  return (
+    <>
+      <Items currentItems={currentItems} />
+      <div className={styles.paginationLayout}>
+        <ReactPaginate
+          nextLabel="next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={2}
+          pageCount={pageCount}
+          previousLabel="< previous"
+          pageClassName={clsx(styles.paginationItem)}
+          pageLinkClassName={clsx(styles.paginationItem)}
+          previousClassName={clsx(styles.paginationItem)}
+          previousLinkClassName={clsx(styles.paginationItem)}
+          nextClassName={clsx(styles.paginationItem)}
+          nextLinkClassName={clsx(styles.paginationItem)}
+          breakLabel="..."
+          breakClassName={clsx(styles.paginationItem)}
+          breakLinkClassName={clsx(styles.paginationItem)}
+          containerClassName={clsx(styles.pagination)}
+          activeClassName={clsx(styles.active)}
+        />
+      </div>
+    </>
+  );
+}
+
+const YoutubePage = () => {
   return (
     <section className={styles.layout}>
       <div className="container">
         <div className="row margin-bottom--lg">
-          {youtubeList.map((props, idx) => (
-            <Youtube key={idx} {...props} />
-          ))}
+          <PaginatedItems itemsPerPage={5} />
         </div>
       </div>
     </section>
