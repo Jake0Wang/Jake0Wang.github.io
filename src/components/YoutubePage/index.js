@@ -3,6 +3,7 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import YoutubeEmbed from "../Youtube";
 import ReactPaginate from "react-paginate";
+import { BeatLoader } from "react-spinners";
 
 const Youtube = ({
   video_code,
@@ -63,15 +64,23 @@ function PaginatedItems({ itemsPerPage }) {
   const [itemOffset, setItemOffset] = useState(0);
   const [youtubeList, setYoutubeList] = useState([]);
   const [latestVideo, setLatestVideo] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        "https://vasqhjczkzaqsexezhhn.functions.supabase.co/youtube-videos"
-      );
-      const data = await response.json();
-      setLatestVideo(data.shift());
-      setYoutubeList(data);
+      try {
+        const response = await fetch(
+          "https://vasqhjczkzaqsexezhhn.functions.supabase.co/youtube-videos"
+        );
+
+        const data = await response.json();
+
+        setLatestVideo(data.shift());
+        setYoutubeList(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     fetchData();
@@ -92,29 +101,35 @@ function PaginatedItems({ itemsPerPage }) {
 
   return (
     <>
-      {itemOffset === 0 && <LatestItem latestItem={latestVideo} />}
-      <Items currentItems={currentItems} />
-      <div className={styles.paginationLayout}>
-        <ReactPaginate
-          nextLabel="next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
-          marginPagesDisplayed={2}
-          pageCount={pageCount}
-          previousLabel="< prev"
-          pageClassName={clsx(styles.paginationItem)}
-          pageLinkClassName={clsx(styles.paginationItem)}
-          previousClassName={clsx(styles.paginationItem)}
-          previousLinkClassName={clsx(styles.paginationItem)}
-          nextClassName={clsx(styles.paginationItem)}
-          nextLinkClassName={clsx(styles.paginationItem)}
-          breakLabel="..."
-          breakClassName={clsx(styles.paginationItem)}
-          breakLinkClassName={clsx(styles.paginationItem)}
-          containerClassName={clsx(styles.pagination)}
-          activeClassName={clsx(styles.active)}
-        />
-      </div>
+      {isLoading ? (
+        <BeatLoader color="#6EA4CA" />
+      ) : (
+        <>
+          {itemOffset === 0 && <LatestItem latestItem={latestVideo} />}
+          <Items currentItems={currentItems} />
+          <div className={styles.paginationLayout}>
+            <ReactPaginate
+              nextLabel="next >"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={3}
+              marginPagesDisplayed={2}
+              pageCount={pageCount}
+              previousLabel="< prev"
+              pageClassName={clsx(styles.paginationItem)}
+              pageLinkClassName={clsx(styles.paginationItem)}
+              previousClassName={clsx(styles.paginationItem)}
+              previousLinkClassName={clsx(styles.paginationItem)}
+              nextClassName={clsx(styles.paginationItem)}
+              nextLinkClassName={clsx(styles.paginationItem)}
+              breakLabel="..."
+              breakClassName={clsx(styles.paginationItem)}
+              breakLinkClassName={clsx(styles.paginationItem)}
+              containerClassName={clsx(styles.pagination)}
+              activeClassName={clsx(styles.active)}
+            />
+          </div>
+        </>
+      )}
     </>
   );
 }
