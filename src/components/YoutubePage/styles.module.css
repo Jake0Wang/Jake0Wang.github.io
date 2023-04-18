@@ -92,8 +92,12 @@
   }
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1200px) {
   .column {
     width: 100%;
+  }
+
+  .latestBlock{
+    top: -20px
   }
 }
