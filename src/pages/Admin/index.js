@@ -8,7 +8,7 @@ const Page = () => {
     <Layout>
       <Header
         title={"Manage Youtube Videos"}
-        body={"Fill out this form to add more Youtube videos to the website"}
+        body={"Fill out this form to add more Youtube videos to the site"}
       />
       <main>
         <AdminPage />
