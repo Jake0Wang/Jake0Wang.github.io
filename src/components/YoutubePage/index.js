@@ -101,7 +101,7 @@ function PaginatedItems({ itemsPerPage }) {
           pageRangeDisplayed={3}
           marginPagesDisplayed={2}
           pageCount={pageCount}
-          previousLabel="< previous"
+          previousLabel="< prev"
           pageClassName={clsx(styles.paginationItem)}
           pageLinkClassName={clsx(styles.paginationItem)}
           previousClassName={clsx(styles.paginationItem)}
