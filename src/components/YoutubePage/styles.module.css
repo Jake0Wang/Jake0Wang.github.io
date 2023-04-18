@@ -18,13 +18,6 @@
   margin: 0px
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  /* background-color: rgba(70, 184, 241, 0.5);
-  width: auto; 
-  margin: 0 auto; */
-}
 
 .latestLabel {
   display: inline;
@@ -44,7 +37,7 @@
   width: auto; 
   margin: 0 auto; */
   position: relative;
-  top: -100px;
+  top: -50px;
 }
 
 .dashed {

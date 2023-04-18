@@ -4,13 +4,26 @@ import styles from "./styles.module.css";
 import YoutubeEmbed from "../Youtube";
 import ReactPaginate from "react-paginate";
 
-const Youtube = ({ video_code, title, description, answer, width, height }) => {
+const Youtube = ({
+  video_code,
+  title,
+  description,
+  answer,
+  width,
+  height,
+  isNew,
+}) => {
   return (
     <div className={clsx("text--center", styles.column)}>
       <div className={clsx(styles.youtubeBlock)}>
         <YoutubeEmbed embedId={video_code} width={width} height={height} />
         <div className={clsx(styles.description)}>
-          <h3>{title}</h3>
+          <h3>
+            {title}{" "}
+            {isNew && (
+              <span className={clsx(styles.latestLabel)}>(Latest)</span>
+            )}
+          </h3>
           <p>{description}</p>
           {answer && (
             <>
@@ -27,15 +40,8 @@ const Youtube = ({ video_code, title, description, answer, width, height }) => {
 
 function LatestItem({ latestItem }) {
   return (
-    <div className={clsx("container", styles.latestBlock)}>
-      <div>
-        <div className={clsx("row", styles.center)}>
-          <span className={clsx(styles.latestLabel)}>Latest</span>
-        </div>
-        <div className={clsx("row", styles.center)}>
-          <Youtube width={640} height={480} {...latestItem} />
-        </div>
-      </div>
+    <div className={clsx("row", styles.latestBlock)}>
+      <Youtube width={640} height={480} isNew={true} {...latestItem} />
     </div>
   );
 }
