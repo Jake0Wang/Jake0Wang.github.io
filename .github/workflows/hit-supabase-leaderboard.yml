@@ -1,0 +1,12 @@
+name: Hit Supabase Leaderboard Endpoint Every 6 Days
+
+on:
+  schedule:
+    - cron: "0 0 */6 * *"
+
+jobs:
+  hit-endpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hit endpoint
+        run: curl -X GET https://vasqhjczkzaqsexezhhn.functions.supabase.co/youtube-videos
