@@ -1,4 +1,4 @@
-name: Hit Supabase Leaderboard Endpoint Every 6 Days
+name: Hit Supabase Youtube Video Endpoint Every 6 Days
 
 on:
   schedule:
