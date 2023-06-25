@@ -2,7 +2,7 @@ name: Hit Supabase Youtube Video Endpoint Every 6 Days
 
 on:
   schedule:
-    - cron: "0 0 */6 * *"
+    - cron: "0 0 */5 * *"
 
 jobs:
   hit-endpoint:
